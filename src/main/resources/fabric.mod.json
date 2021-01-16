@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "alpha_renderer",
+  "version": "${version}",
+  "name": "Alpha Renderer",
+  "description": "Mod that ports some rendering features from pre-halloween update alpha",
+  "authors": [
+    "ToothpasteVixen"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/alpha_renderer/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "AlphaRendererClient"
+    ],
+    "main": [
+      "AlphaRenderer"
+    ]
+  },
+  "mixins": [
+    "alpha_renderer.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.1",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}
