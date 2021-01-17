@@ -82,7 +82,7 @@ public abstract class CellularTexture extends AbstractTexture implements Texture
     public void shutdown(){
         if(isReplaced)
         {
-            MinecraftClient.getInstance().getTextureManager().destroyTexture(texID);
+            // MinecraftClient.getInstance().getTextureManager().destroyTexture(texID);
             texture.close();
             isReplaced = false;
             onShutdown();
