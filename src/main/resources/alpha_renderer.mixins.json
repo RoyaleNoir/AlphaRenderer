@@ -9,7 +9,8 @@
   "client": [
     "LightmapTextureMixin",
     "BackgroundRendererMixin",
-    "InGameHudMixin"
+    "InGameHudMixin",
+    "BiomeColorsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
