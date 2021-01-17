@@ -13,10 +13,10 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "AlphaRendererClient"
+      "me.kay.alpha_renderer.client.AlphaRendererClient"
     ],
     "main": [
-      "AlphaRenderer"
+      "me.kay.alpha_renderer.AlphaRenderer"
     ]
   },
   "mixins": [

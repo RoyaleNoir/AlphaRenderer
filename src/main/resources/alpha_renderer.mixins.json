@@ -6,6 +6,7 @@
   "mixins": [
   ],
   "client": [
+    "LightmapTextureMixin"
   ],
   "injectors": {
     "defaultRequire": 1
