@@ -8,6 +8,6 @@ import net.fabricmc.api.Environment;
 public class AlphaRendererClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-
+        FogHelper.Register();
     }
 }

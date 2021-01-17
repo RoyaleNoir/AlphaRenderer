@@ -4,9 +4,11 @@
   "package": "me.kay.alpha_renderer.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+
   ],
   "client": [
-    "LightmapTextureMixin"
+    "LightmapTextureMixin",
+    "BackgroundRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
