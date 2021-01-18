@@ -28,7 +28,7 @@ public abstract class HeldItemRendererMixin {
         yaw = player.getYaw(tickDelta);
     }
     @ModifyVariable(
-            name = "h",
+            ordinal = 3,
             at= @At(value = "INVOKE", target = "Lnet/minecraft/util/math/MathHelper;lerp(FFF)F", ordinal = 2),
             method = "renderItem(FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider$Immediate;Lnet/minecraft/client/network/ClientPlayerEntity;I)V")
     private float removeLagP(float old)
@@ -37,7 +37,7 @@ public abstract class HeldItemRendererMixin {
     }
 
     @ModifyVariable(
-            name = "g",
+            ordinal = 2,
             at= @At(value = "INVOKE", target = "Lnet/minecraft/client/util/math/MatrixStack;multiply(Lnet/minecraft/util/math/Quaternion;)V", ordinal = 0),
             method = "renderItem(FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider$Immediate;Lnet/minecraft/client/network/ClientPlayerEntity;I)V")
     private float removeLagP2(float old)
@@ -47,7 +47,7 @@ public abstract class HeldItemRendererMixin {
 
 
     @ModifyVariable(
-            name = "i",
+            ordinal = 4,
             at= @At(value = "INVOKE", target = "Lnet/minecraft/client/util/math/MatrixStack;multiply(Lnet/minecraft/util/math/Quaternion;)V", ordinal = 0),
             method = "renderItem(FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider$Immediate;Lnet/minecraft/client/network/ClientPlayerEntity;I)V")
     private float removeLagY(float old)
