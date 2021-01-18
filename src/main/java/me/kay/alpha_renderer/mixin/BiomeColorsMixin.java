@@ -1,5 +1,7 @@
 package me.kay.alpha_renderer.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockRenderView;
@@ -10,6 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import javax.swing.text.html.BlockView;
 
+@Environment(EnvType.CLIENT)
 @Mixin(BiomeColors.class)
 public abstract class BiomeColorsMixin {
     @Inject(at=@At("TAIL"), method="getWaterColor", cancellable = true)

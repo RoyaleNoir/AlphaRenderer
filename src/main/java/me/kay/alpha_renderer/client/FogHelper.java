@@ -1,5 +1,7 @@
 package me.kay.alpha_renderer.client;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.world.ClientWorld;
@@ -8,6 +10,7 @@ import net.minecraft.util.Tickable;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.LightType;
 
+@Environment(EnvType.CLIENT)
 public class FogHelper {
     private static final float[] lightMap;
 

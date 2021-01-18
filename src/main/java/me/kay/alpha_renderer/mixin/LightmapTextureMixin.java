@@ -1,5 +1,7 @@
 package me.kay.alpha_renderer.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.texture.NativeImage;
@@ -18,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * Changes the post-b1.8 lightmapping to more closely resemble alpha.
  * NOTE: The Day-Night cycle is still smoother than alpha because I don't have time to rewrite light updates.
  */
+@Environment(EnvType.CLIENT)
 @Mixin(LightmapTextureManager.class)
 public abstract class LightmapTextureMixin {
 

@@ -1,5 +1,7 @@
 package me.kay.alpha_renderer.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.item.HeldItemRenderer;
@@ -11,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+@Environment(EnvType.CLIENT)
 @Mixin(HeldItemRenderer.class)
 public abstract class HeldItemRendererMixin {
 

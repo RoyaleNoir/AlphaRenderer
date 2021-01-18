@@ -1,10 +1,13 @@
 package me.kay.alpha_renderer.client.render;
 
 import com.google.common.collect.Maps;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.util.Identifier;
 
 import java.util.Map;
 
+@Environment(EnvType.CLIENT)
 public class CellularTextureManager {
     private static final Map<Identifier, CellularTexture> CELLULAR_DICT = Maps.newIdentityHashMap();
 

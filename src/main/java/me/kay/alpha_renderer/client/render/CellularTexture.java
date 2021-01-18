@@ -1,5 +1,7 @@
 package me.kay.alpha_renderer.client.render;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.texture.*;
@@ -9,6 +11,7 @@ import net.minecraft.util.Identifier;
 import java.io.IOException;
 import java.util.function.Function;
 
+@Environment(EnvType.CLIENT)
 public abstract class CellularTexture extends AbstractTexture implements TextureTickListener {
 
     private boolean isReplaced;

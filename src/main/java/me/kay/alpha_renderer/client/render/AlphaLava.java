@@ -1,10 +1,13 @@
 package me.kay.alpha_renderer.client.render;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
 
+@Environment(EnvType.CLIENT)
 public class AlphaLava extends CellularTexture{
 
     private float[] soupHeat;

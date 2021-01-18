@@ -1,5 +1,7 @@
 package me.kay.alpha_renderer.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.hud.InGameHud;
@@ -21,6 +23,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
 
+@Environment(EnvType.CLIENT)
 @Mixin(InGameHud.class)
 public abstract class InGameHudMixin extends DrawableHelper {
 
