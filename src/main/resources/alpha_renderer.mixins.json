@@ -10,7 +10,10 @@
     "LightmapTextureMixin",
     "BackgroundRendererMixin",
     "InGameHudMixin",
-    "BiomeColorsMixin"
+    "BiomeColorsMixin",
+    "HeldItemRendererMixin",
+    "ClientPlayerEntityMixin",
+    "PlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
