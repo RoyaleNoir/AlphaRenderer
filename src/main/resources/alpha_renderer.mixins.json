@@ -13,7 +13,8 @@
     "BiomeColorsMixin",
     "HeldItemRendererMixin",
     "ClientPlayerEntityMixin",
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "ScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

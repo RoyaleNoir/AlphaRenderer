@@ -1,5 +1,6 @@
 package me.kay.alpha_renderer.client;
 
+import me.kay.alpha_renderer.client.gui.AlphaInventoryScreen;
 import me.kay.alpha_renderer.client.render.AlphaFire;
 import me.kay.alpha_renderer.client.render.AlphaLava;
 import me.kay.alpha_renderer.client.render.AlphaWater;
@@ -7,11 +8,17 @@ import me.kay.alpha_renderer.client.render.CellularTextureManager;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.event.client.ClientTickCallback;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
+import net.minecraft.client.options.KeyBinding;
+import net.minecraft.client.util.InputUtil;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import org.lwjgl.glfw.GLFW;
 
 @Environment(EnvType.CLIENT)
 public class AlphaRendererClient implements ClientModInitializer {
@@ -25,6 +32,7 @@ public class AlphaRendererClient implements ClientModInitializer {
     private final Identifier listenerId = new Identifier("kay", "fluid_reload_listener");
     @Override
     public void onInitializeClient() {
+        KeyBinding binding1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.alpha_inventory", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_I, "key.category.alpha"));
         FogHelper.Register();
         ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(new SimpleSynchronousResourceReloadListener()
         {
@@ -37,6 +45,13 @@ public class AlphaRendererClient implements ClientModInitializer {
             @Override
             public void apply(ResourceManager resourceManager) {
                 CellularTextureManager.OnReload();
+            }
+        });
+
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            while (binding1.wasPressed()) {
+                if(client.player != null)
+                client.openScreen(new AlphaInventoryScreen(client.player));
             }
         });
     }

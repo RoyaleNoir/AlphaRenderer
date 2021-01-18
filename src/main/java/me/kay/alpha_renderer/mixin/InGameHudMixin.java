@@ -226,4 +226,10 @@ public abstract class InGameHudMixin extends DrawableHelper {
         }
         ci.cancel();
     }
+
+    @Inject(at=@At("HEAD"), method = "renderHeldItemTooltip", cancellable = true)
+    private void noTooltips(MatrixStack matrices, CallbackInfo ci)
+    {
+        ci.cancel();
+    }
 }
