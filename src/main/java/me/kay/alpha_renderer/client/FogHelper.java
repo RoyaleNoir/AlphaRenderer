@@ -17,7 +17,7 @@ public class FogHelper {
     private static float lastBrightness = 0.0f;
     private static float currentBrightness = 0.0f;
 
-    public static final int RENDER_DISTANCE = 3;
+    public static int RENDER_DISTANCE = 3;
 
     static
     {
@@ -50,8 +50,8 @@ public class FogHelper {
         Entity entity = MinecraftClient.getInstance().cameraEntity;
         ClientWorld world = MinecraftClient.getInstance().world;
         if(entity != null && world != null) {
-            int blockBrightness = entity.world.getLightLevel(LightType.BLOCK, entity.getBlockPos());
-            int skyBrightness = entity.world.getLightLevel(LightType.SKY, entity.getBlockPos());
+            int blockBrightness = entity.world.getLightLevel(LightType.BLOCK, entity.getBlockPos().add(0, 1, 0));
+            int skyBrightness = entity.world.getLightLevel(LightType.SKY, entity.getBlockPos().add(0, 1, 0));
 
             int oldBrightness = oldLight(blockBrightness, skyBrightness, world, 0.0f);
 

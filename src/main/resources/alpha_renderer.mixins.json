@@ -4,7 +4,7 @@
   "package": "me.kay.alpha_renderer.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-
+    "ItemEntityMixin"
   ],
   "client": [
     "LightmapTextureMixin",

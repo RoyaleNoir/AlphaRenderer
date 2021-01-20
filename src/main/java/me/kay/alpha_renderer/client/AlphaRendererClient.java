@@ -16,6 +16,7 @@ import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.options.KeyBinding;
+import net.minecraft.client.render.RenderPhase;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.ResourceType;
@@ -36,6 +37,8 @@ public class AlphaRendererClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         KeyBinding binding1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.alpha_inventory", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_I, "key.category.alpha"));
+        KeyBinding binding2 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.fog", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_F, "key.category.alpha"));
+
         FogHelper.Register();
         ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(new SimpleSynchronousResourceReloadListener()
         {
@@ -55,6 +58,9 @@ public class AlphaRendererClient implements ClientModInitializer {
             while (binding1.wasPressed()) {
                 if(client.player != null)
                 client.openScreen(new AlphaInventoryScreen(client.player));
+            }
+            while (binding2.wasPressed()) {
+                FogHelper.RENDER_DISTANCE = Math.floorMod(FogHelper.RENDER_DISTANCE - 1, 4);
             }
         });
 
